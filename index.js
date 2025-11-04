@@ -19,3 +19,14 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
+db.sequelize.sync().then(() => {
+    app.listen(PORT, () => {
+        console.log(`Server Stared`);
+    })
+})
+    .catch((err) => {
+        console.log('Error: ' + err);
+})
+
+
+
