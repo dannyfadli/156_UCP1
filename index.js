@@ -1,11 +1,3 @@
-// npm init
-// npm i express mysql2 sequelize dotenv
-// npm i -D nodemon sequelize-cli
-// git init
-// npx sequelize init
-// npm i dotenv
-
-
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -52,7 +44,7 @@ app.put('/kandang/:id', async (req, res) => {
     const id = req.params.id;
     const data = req.body;
     try {
-        const kandang = await db.Kandang.update(id);
+        const kandang = await db.Kandang.findByPk(id);
         if (!kandang) {
             return res.status(404).send({message: 'Kandang not found'});
         }

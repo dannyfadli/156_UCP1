@@ -21,13 +21,13 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        Tahun_masuk: {
+        Tahun_lahir: {
             type: DataTypes.INTEGER,
             allowNull: false
         }
     }, {
-        tableName: 'komik',
+        tableName: 'kandang',
         timestamps: true
     });
-    return Komik;
+    return Kandang;
 }  
